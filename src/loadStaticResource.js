@@ -12,27 +12,38 @@ var loadStaticResource = function(url, callback) {
                 link = url;
             } else {
                 link = url.shift();
-                if(url.length >= 1) {
+                if(url.length > 0) {
                     state = true;
                  }
             }
             type = config[link.split('.').slice(-1)[0].split('?')[0]];
             eleNode = document.createElement(type[0]);
+            // 判断是否支持html元素的readyState属性
             if(eleNode.readyState) {
                 eleNode.onreadystatechange = function(e) {
-                    e = e || window.event;
                     var target = e.target || e.srcElement;
                     if(target.readyState === 'loaded' || target.readyState === 'complete') {
                         target.onreadystatechange = null;
-                        state === true ? loader() : (typeof callback === 'function') ? callback() : '';
+                        if(state === true) {
+                            loader();
+                        } else {
+                            if(typeof callback === 'function') {
+                                callback();
+                            }
+                        }
                     }
                 };
             } else {
                 eleNode.onload = function(e) {
-                    e =  e || window.event;
-                    var target = e.target || e.srcElement;                              
+                    var target = e.target || e.srcElement;                        
                     target.onload = target = null;
-                    state === true ? loader() : (typeof callback === 'function') ? callback() : '';
+                    if(state === true) {
+                        loader();
+                    } else {
+                        if(typeof callback === 'function') {
+                            callback();
+                        }
+                    }
                 }
             }
             if(type.length > 2) {

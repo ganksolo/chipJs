@@ -3,23 +3,32 @@
 <head>
 	<meta charset="UTF-8">
 	<title>demo</title>
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+    <script src="src/loadStaticResource.js"></script>
 </head>
 <body>
-
+<h1>test-load</h1>
 <script>
 (function(){
 
     var js = "http://www.anychem.com/static/index/js/lib.handler.js?201402241737",
         footerCss = "http://p2.youxi.bdimg.com/site/activity/ff14/common/css/ff14footer.css",
-        css1 = "http://p2.youxi.bdimg.com/site/v5/style/common.css?" + Date.parse(new Date),
-        css2 = "http://p2.youxi.bdimg.com/site/v5/style/index_v5.css",
-        css3 = "http://p2.youxi.bdimg.com/site/v5/style/header.css",
-        js1 = "http://p2.youxi.bdimg.com/site/games/scripts/html5shiv.js",
-        js2 = "http://p2.youxi.bdimg.com/site/v4/script/holiday.min.js";
+        css1 = "http://p2.youxi.bdimg.com/site/v5/style/common.css?css1",
+        css2 = "http://p2.youxi.bdimg.com/site/v5/style/index_v5.css?css2",
+        css3 = "http://p2.youxi.bdimg.com/site/v5/style/header.css?css3",
+        js1 = "http://p2.youxi.bdimg.com/site/games/scripts/html5shiv.js?js1",
+        js2 = "http://p2.youxi.bdimg.com/site/v4/script/holiday.min.js?js2",
+        duowancss = "http://assets.dwstatic.com/www/1.1.5/css/index.css?duowan",
+        duowanjs = "http://market.duowan.com/duowan/261590708257.js?duowan";
 
-    loadStaticResource([js1, js2, css3, css2, css1], function(){
+    loadStaticResource([js1, js2, css1, css2, css3], function(){
         console.log('js done');
     });
+
+    loadStaticResource([duowancss, duowanjs], function(){
+        console.log('duowanResource done!');
+    });
+
     loadStaticResource(footerCss, function(){
         var footerHtml = '';
         footerHtml = '<div class="footerwrapper">\
@@ -36,9 +45,9 @@
                         <span>©2014 BAIDU 北京百度网讯科技有限公司 文网文[2010]197号 京ICP证030173号</span>\
                     </div>\
                 </div>';
-            $('body').append(footerHtml);
-    });
 
+        $('body').append(footerHtml);
+    });
 
 })();
 </script>
