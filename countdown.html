@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>倒计时</title>
+    <script src="src/countdown.js"></script>
+    <style>
+        div{
+            border: 2px solid #ff8800;
+            padding: 5px;
+        }
+        .timeWrap{
+            color: red;
+        }
+        .unitWrap{
+            font-weight: bold;
+            color : green;
+        }
+    </style>
+</head>
+<body>
+<p>默认倒计时（只需要传入容器ID和截止时间）</p>    
+<div id="time1"></div>
+<p>计算出周数（默认只计算到多少天）</p>
+<div id="time2"></div>
+<p>显示时间单位(默认的单位为['周','日', '时', '分', '秒'])</p>
+<div id="time3"></div>
+<p>显示时间单位，并且自定义(默认的单位为['周','日', '时', '分', '秒'])</p>
+<div id="time4"></div>
+<p>去掉周的html占位符(只需要配置format参数 d:h:m:s，如果要显示周 那么设置为w:d:h:m:s，设置format中的分隔符直接会体现在页面中)</p>
+<div id="time5"></div>
+<p>自定义时间容器class或者时间单位容器的class(默认的时间容器class为time, 时间单位容器class为unit;分隔符无标签)</p>
+<div id="time6"></div>
+    <script>
+    // 默认调用，
+    countdown({
+        containerId : 'time1',
+        endTime : '2014/12/20 18:20:30' // 2014-12-20 18:20:30
+    });
+
+    countdown({
+        containerId : 'time2',
+        endTime : '2014/12/20 18:20:30',
+        displayWeek : true,
+    });
+
+    countdown({
+        containerId : 'time3',
+        endTime : '2014/12/20 18:20:30',
+        displayWeek : true,
+        displayUnit : true
+    });
+
+    countdown({
+        containerId : 'time4',
+        endTime : '2014/12/20 18:20:30',
+        displayWeek : true,
+        displayUnit : true,
+        unit : ['[w]', '[d]', '[h]', '[m]', '[s]']
+    });
+
+    countdown({
+        containerId : 'time5',
+        endTime : '2014/12/20 18:20:30',
+        format : 'd:h:m:s' // d-h-m-s
+    });
+
+    countdown({
+        containerId : 'time6',
+        endTime : '2014/12/20 18:20:30',
+        format : 'd:h:m:s', // d-h-m-s
+        displayUnit : true,
+        timeClass : 'timeWrap',
+        unitClass : 'unitWrap'
+    });
+    </script>
+</body>
+</html>
