@@ -1,6 +1,6 @@
 /**
  * 倒计时
- * @author jiayulong(jiayulong@baidu.com)
+ * @author pom(f2engineer@outlook.com)
  */
 var countdown = (function(){
     /**
