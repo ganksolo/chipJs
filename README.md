@@ -1,4 +1,4 @@
-# chipJs （功能片段）
+# chipJs （杂货铺）
 
 
 
@@ -14,7 +14,7 @@
 <p>默认倒计时（只需要传入容器ID和截止时间）</p>    
 <div id="time1"></div>
 ```
-####基本使用：
+**基本使用：**
 
 ``` javascript
 countdown({
@@ -23,7 +23,7 @@ countdown({
 });
 ``` 
 
-####完整使用：
+**完整使用：**
 
 ``` javascript
 countdown({
@@ -41,13 +41,13 @@ countdown({
 ##静态资源加载器
 `loadStaticResource(string[Array], callback)`
 
-####参数说明：
+**参数说明**：
 
 　　第一个参数：`string`单个url 或 `Array`多个url
 
 　　第二个参数：`callback`加载
 
-####使用方法：
+**使用方法**：
 ``` javascript
 var js1 = 'http://www.xxxx.com/static/resource/xx1.js',
     js2 = 'http://www.xxxx.com/static/resource/xx2.js',
