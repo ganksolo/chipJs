@@ -40,9 +40,9 @@ countdown({
 
 ####参数说明：
 
-第一个参数：`string`单个url 或 `Array`多个url
+　　第一个参数：`string`单个url 或 `Array`多个url
 
-第二个参数：`callback`加载
+　　第二个参数：`callback`加载
 
 ####使用方法：
 ``` javascript
