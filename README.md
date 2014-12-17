@@ -43,9 +43,11 @@ countdown({
 
 **参数说明**：
 
-　　第一个参数：`string`单个url 或 `Array`多个url
+| 参数  | 描述   |
+| -----   | ---  |
+| String[Array]     | `String`为单个url; `Array`多个url，以数组形式传入;|
+| callback        |   加载完成后，回调函数   |
 
-　　第二个参数：`callback`加载
 
 **使用方法**：
 ``` javascript
