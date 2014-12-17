@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>slide Demo</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/slides.css">
+</head>
+<body>
+    <div id="J_bgSlides">
+        <div class="bg_container">
+            <div data-bg="img/bgImg/3.jpg">1</div>
+            <div data-bg="img/bgImg/2.jpg">2</div>
+            <div data-bg="img/bgImg/1.jpg">3</div>
+            <div data-bg="img/bgImg/4.jpg">4</div>
+        </div>
+    </div>
+
+    <div class="wrap">
+        <h1>
+            默认slides
+        </h1>
+        <div id="J_slides">
+            <div class="slides_container">
+                <div>
+                    <a href="#1" title="link1">
+                        <img src="img/banner1.jpg" title="我是图片1" alt="大天使之剑来袭★★★★大侠再战巅峰一">
+                    </a>
+                </div>
+                <div>
+                    <a href="#2">
+                        <img src="img/banner2.jpg" title="我是图片2" alt="大天使之剑来袭★★★★大侠再战巅峰二">
+                    </a>
+                </div>
+                <div>
+                    <a href="#3">
+                        <img src="img/banner3.jpg" title="我是图片3" alt="大天使之剑来袭★★★★大侠再战巅峰三">
+                    </a>
+                </div>
+                <div>
+                    <a href="#4">
+                        <img src="img/banner4.jpg" title="我是图片4" alt="大天使之剑来袭★★★★大侠再战巅峰四">
+                    </a>
+                </div>
+                <div>
+                    <a href="#5">
+                        <img src="img/banner5.jpg" title="我是图片5" alt="大天使之剑来袭★★★★大侠再战巅峰五">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <h1>
+            淡入淡出的slides
+        </h1>
+        <div id="J_slides1">
+            <div class="slides_container">
+                <div>
+                    <a href=""><img src="img/1.jpg" title="风景图而已1++++++++风景图而已1" alt=""></a>
+                </div>
+                <div>
+                    <a href=""><img src="img/2.jpg" title="哈哈哈啊啊是打算风景图而已2" alt=""></a>
+                </div>
+                <div>
+                    <a href=""><img src="img/3.jpg" title="最是啊soi独家哦i啊风景图而已3" alt=""></a>
+                </div>
+                <div>
+                    <a href=""><img src="img/4.jpg" title="风景图而已4" alt=""></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+    <script src="../src/jquery.slide.js"></script>
+    <script>
+            $('#J_bgSlides').pureSlide({
+                slideType : 'bgImg',
+                container : 'bg_container'
+            });
+
+            $('#J_slides').pureSlide({
+                createImgDesc : true
+            });
+
+            $('#J_slides1').pureSlide({
+                createImgDesc : true,
+                play : 5000,
+                effect : 'fade',
+                hoverPause: true,
+                hoverPauseTime : 0
+            });
+    </script>
+</body>
+</html>
