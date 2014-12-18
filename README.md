@@ -62,12 +62,7 @@ var js1 = 'http://www.xxxx.com/static/resource/xx1.js',
 
 loadStaticResource("../css／ff14footer.css", function(){
     var footerHtml = '';
-    footerHtml = '<div class="footerwrapper">\
-                <div class="footer">\
-                    <span>©2014 BAIDU 北京****科技有限公司 文网文[2010]1xx号 京ICP证xxx号</span>\
-                </div>\
-            </div>';
-
+    footerHtml = '<div class="footerwrapper"></div>';
     document.getElementsByTagName("body")[0].appendChild(footerHtml);
 });
 ```
