@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>圆</title>
+	<style>
+	span{
+		color: red;
+		position: absolute;
+	}
+	</style>
+</head>
+<body>
+<script>
+	    var showCircle = function() {
+        var PI = Math.PI;
+        return {
+            draw: function(r/*半径*/, _x/*x轴偏移*/, _y/*y轴偏移*/) {
+                // 获得x y坐标
+                var x, y;
+                for(var i = 0; i < 360; i += 10) {
+                    x = Math.cos(i / 180 * PI) * r + _x;
+                    y = Math.sin(i / 180 * PI) * r + _y;
+                    var O = document.createElement('span');
+                    O.appendChild(document.createTextNode('.'));
+                    document.body.appendChild(O);
+                    O.style.left = x + 'px';
+                    O.style.top = y + 'px';
+                }        
+            }
+        }
+    }();
+
+    showCircle.draw(100, 100, 100);
+</script>
+</body>
+</html>
