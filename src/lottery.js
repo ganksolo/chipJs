@@ -59,6 +59,7 @@ var lottery = (function(){
 
         init : function() {
             var that = this;
+            // 合并参数
             this.settings = this.extend(this.configs, this.options, true);
             this.setData(this.settings.num);
             document.querySelector('#btn').addEventListener('click', function(){

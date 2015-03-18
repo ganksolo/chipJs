@@ -241,6 +241,9 @@ $.fn.pureSlide = function( option ) {
                         $('.' + option.paginationClass, ele).children().eq(next).addClass(option.currentClass);
                     }
                 }
+
+                option.setCounts && option.setCounts(current, children.length); 
+
             },
 
             stop : function() {
@@ -342,6 +345,7 @@ $.fn.pureSlide.option = {
     start : 1,                              // number 从第几个开始
     play : 3000,                            // number 间隔时间
     createImgDesc : false,                  // boolean 是否创建图片说明
-    bindPaginationEvent : 'click'           // string 绑定分页的事件类型
+    bindPaginationEvent : 'click',          // string 绑定分页的事件类型
+    setCounts: function(current, length){}
 };
 

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>lottery</title>
+    <title>随机抽奖</title>
 </head>
 <body>
 
@@ -10,84 +10,7 @@
 
 <input type="number" id="num" placeholder="输入每次抽奖人数">
 <button id="btn">抽奖</button>
-<script>
 
-// var lottery = {
-//     data : [],
-//     init : function() {
-//         this.setData(5);
-//         this.on();
-//     },
-
-//     setData : function(num) {
-//         for(var i = 0; i < num; i ++) {
-//             this.data[i] = Math.floor(Math.random() * num);
-//         }
-//     },
-
-//     sort : function() {
-//         this.data.sort(function(a, b){return a - b});
-//     },
-
-//     reverse : function() {
-//         this.data.reverse();
-//     },
-
-//     lottery : function() {
-//         var len = this.data.length, random;
-//         if(len <= 0) {
-//             alert('done');
-//             return;
-//         }
-//         random = Math.floor(Math.random() * len);
-//         document.querySelector('#box').innerHTML = this.data[random];
-//         this.data.splice(random, 1);
-//     },
-
-//     on : function() {
-//         var self = this;
-//         document.querySelector('#btn').addEventListener('click', function(){
-//            self.lottery();
-//         }, false);
-//     }
-// };
-
-    var data = [];
-    var setData = function(num) {
-        for(var i = 0; i < num; i ++) {
-            data[i] = i + 1;
-        }
-    };
-    var lottery = function(personNum) {
-        var win = [],
-            random;
-        if(data.length <= 0) {
-            alert('done');
-            return;
-        }
-        for(var i = 0; i < personNum; i++) {
-            random = Math.floor(Math.random() * data.length);
-            win.push((data.splice(random, 1)).join(''));
-        }
-        document.querySelector('#box').innerHTML = '中奖号码为: ' + win.join(',') + '号';
-    };
-
-    document.querySelector('#btn').addEventListener('click', function(){
-       lottery(document.querySelector('#num').value);
-    }, false);
-
-    setData(10);
-
-
-    var lottery = (function(){
-        
-        function Lottery(option) {
-            
-        }
-
-    })(window);
-
-</script>
     
 </body>
 </html>

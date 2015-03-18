@@ -19,6 +19,7 @@
     <div class="wrap">
         <h1>
             默认slides
+            <div id="nums">asd</div>
         </h1>
         <div id="J_slides">
             <div class="slides_container">
@@ -79,7 +80,10 @@
             });
 
             $('#J_slides').pureSlide({
-                createImgDesc : true
+                createImgDesc : true,
+                setCounts :  function(i, l) {
+                    $('#nums').text(i/l);
+                }
             });
 
             $('#J_slides1').pureSlide({
