@@ -31,6 +31,7 @@ var countdown = (function(){
             unit : ['周', '日', '时', '分', '秒'],
             displayUnit : false,
             displayWeek : false,
+            displayDay : false,
             endTime : null,
             containerId : 'timeBox',
             timeClass : 'time',
@@ -110,13 +111,19 @@ var countdown = (function(){
             format = this.settings.format.split(this.separator);
 
             weeks = Math.floor(remain / this.weekFormula); remain %= this.weekFormula;
-
+            
             if(this.settings.displayWeek){
                 days = Math.floor(remain / this.dayFormula); remain %= this.dayFormula;
             } else {
                 days = Math.floor((remain / this.dayFormula) + weeks *7); remain %= this.dayFormula; weeks = 0;
+                
+                if(this.settings.displayDay) {
+                    hours = Math.floor(remain / this.hourFormula); remain %= this.hourFormula;
+                } else {
+                    hours = Math.floor(remain / this.hourFormula) + days * 24; remain %= this.hourFormula; days = 0;
+                }
             }
-            hours = Math.floor(remain / this.hourFormula); remain %= this.hourFormula;
+            
             minutes = Math.floor(remain / this.minuteFormula); remain %= this.minuteFormula;
             seconds = Math.floor(remain / this.secondFormula); remain %= this.secondFormula;
             defaultArr = [weeks, days, hours, minutes, seconds];
